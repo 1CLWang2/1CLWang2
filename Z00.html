@@ -1,0 +1,573 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Z00">
+  <style>
+    @import url（https: //fonts.googleapis.com/earlyaccess/notosanstc.css）;
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  background-color: white;
+  margin: 0px;
+  padding: 0px;
+}
+
+.top {
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.top div {
+  flex: 1 1 40%;
+  margin: 10px;
+  height: 250px;
+  color: white;
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  padding: 25px;
+  background-size: cover;
+  transition: all 1s;
+  filter: grayscale(100%);
+}
+
+.top div:hover {
+  filter: grayscale(0%) brightness(100%);
+  transition: all 0.3s;
+}
+
+.top span {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.top #⼤災難 {
+  background-image: url("https://images.unsplash.com/photo-1636314533101-9112be56e507?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDcyMTE5NjN8&ixlib=rb-4.0.3&q=85");
+  background-position: right bottom;
+}
+
+.top #遷移計劃 {
+  background-image: url("https://images.unsplash.com/photo-1534996858221-380b92700493?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDcyMTI5MTF8&ixlib=rb-4.0.3&q=85");
+  background-position: left bottom;
+}
+
+.top #地球⼈類 {
+  background-image: url("https://images.unsplash.com/photo-1501472393568-6d98729ac121?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDcyMTQ5NjJ8&ixlib=rb-4.0.3&q=85");
+  background-position: 0% 80%;
+}
+
+.top #進化 {
+  background-image: url("https://images.unsplash.com/photo-1515632816436-da217f0aef30?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDcyMTQ1MzR8&ixlib=rb-4.0.3&q=85");
+  background-position: center bottom 30%;
+}
+
+@media screen and (max-width: 768px) {
+  .top div {
+    text-align: left;
+  }
+}
+
+.t-character {
+  color: white;
+  text-align: center;
+  padding: 25px;
+  background-size: cover;
+  min-height: 45vh;
+  background-image: url("https://images.unsplash.com/photo-1605626155980-becfec93baf2?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDcyMjAwNzB8&ixlib=rb-4.0.3&q=85");
+  background-position: center 40%;
+  position: relative;
+}
+
+.t-character button {
+  margin: 5px;
+  filter: invert(1);
+  border: none;
+  color: white;
+  background-color: black;
+  font-size: 14px;
+  border-radius: 20px;
+  padding: 5px 10px 5px;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+}
+
+.bookshelf {
+  padding: 20px 0px 0px;
+}
+
+.area {
+  white-space: nowrap;
+  scroll-snap-type: x;
+  overflow: auto;
+  min-height: 150px;
+  margin: 0px 15px 0px;
+  padding: 10px 0px 10px;
+  font-weight: bold;
+  color: black;
+  border: none;
+  text-align: left;
+}
+
+.block {
+  vertical-align: top;
+  white-space: normal;
+  display: inline-block;
+  margin: 15px;
+  text-align: left;
+}
+
+.book {
+  width: 110px;
+  min-height: 150px;
+  background-color: gray;
+  border: none;
+  border-radius: 3px;
+  text-align: center;
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.2), 0px 4px 8px rgba(0, 0, 0, 0.25),
+    2px 2px 2px rgba(0, 0, 0, 0.05);
+}
+
+.book span {
+  font-size: 18px;
+  color: white;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  margin: 10px;
+}
+
+.name {
+  margin: 10px 0px 0px;
+  font-size: 14px;
+  display: block;
+}
+
+.author {
+  font-size: 12px;
+  color: gray;
+  display: block;
+}
+
+iframe {
+  height: calc(100vw / 1.5);
+}
+
+.character {
+  white-space: nowrap;
+  scroll-snap-type: x;
+  overflow: auto;
+  min-height: 35px;
+  margin: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  border: none;
+  text-align: left;
+}
+
+.character div {
+  position: relative;
+  min-height: 300px;
+  width: 180px;
+  margin: 5px;
+  vertical-align: top;
+  white-space: normal;
+  display: inline-block;
+  border: lightgray 1px solid;
+  border-radius: 5px;
+}
+
+.character div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    0deg,
+    rgba(222, 222, 222, 0.8) 15%,
+    rgba(255, 255, 255, 0) 78%
+  );
+  z-index: 0;
+  transition: all 1s;
+}
+
+.character div:hover::before {
+  background-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0) 15%,
+    rgba(0, 0, 0, 0) 78%
+  );
+  transition: all 1s;
+}
+
+.character div h3 {
+  color: black;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  z-index: 1;
+  transition: all 1s;
+}
+
+.character div:hover h3 {
+  color: transparent;
+  transition: all 1s;
+}
+
+#蟑螂人 {
+  text-align: right;
+  background-image: url(https://raw.githubusercontent.com/251131395/multimedia/main/動物/蟑螂人.jpeg);
+  background-size: cover;
+  background-position: 5%;
+  transition: all 1s;
+}
+
+#蟑螂人:hover {
+  background-size: cover;
+  background-position: 70%;
+  transition: all 2s;
+}
+
+.character{
+display:none;
+}
+
+.tl-title {
+  margin: 0px 0px 15px;
+}
+
+.tl-title span {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.tl-title button {
+  border: none;
+  float: right;
+  color: white;
+  background-color: black;
+  font-size: 14px;
+  border-radius: 20px;
+  padding: 5px 10px 5px;
+}
+
+.timeline {
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+summary {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+details {
+  margin: 0px 0px 25px;
+}
+
+.messagebox {
+  padding: 20px;
+}
+
+input#name {
+  width: calc(100% - 15px);
+  margin: 0px 0px 15px;
+}
+
+select {
+  margin: 0px 0px 15px;
+}
+
+textarea#message {
+  width: calc(100% - 15px);
+  min-height: 250px;
+}
+
+iframe {
+  display: none;
+}
+
+  </style>
+</head>
+
+<body>
+  <header>
+  </header>
+
+  <div class="top">
+    <div id="⼤災難">
+      <span>⼤災難</span>
+    </div>
+    <div id="遷移計劃">
+      <span>遷移計劃</span>
+    </div>
+    <div id="地球⼈類">
+      <span>地球⼈類</span>
+    </div>
+    <div id="進化">
+      <span>進化</span>
+    </div>
+  </div>
+
+  <div class="t-character">
+    <span style="font-weight: bold; font-size: 28px;">本期人物</span>
+
+    <div class="bottom">
+      <div style="font-weight: bold; font-size: 22px;">張琅仁 - 蟑螂</div>
+      <span style="font-weight:bold;color:#2997ff"><u>其他人物</u> </span><button>閱讀</button>
+    </div>
+  </div>
+
+  <div class="bookshelf">
+    <span style="font-size:24px;font-weight:bold;margin:20px;">本期文章</span>
+    <div class="area">
+      <div class="block">
+        <div class="book" id="">
+          <span>一本書</span>
+        </div>
+        <span class="name">一本書</span>
+        <span class="author">251131395</span>
+      </div>
+      <div class="block">
+        <div class="book" id="">
+          <span>一本書</span>
+        </div>
+        <span class="name">一本書</span>
+        <span class="author">251131395</span>
+      </div>
+      <div class="block">
+        <div class="book" id="">
+          <span>一本書</span>
+        </div>
+        <span class="name">一本書</span>
+        <span class="author">251131395</span>
+      </div>
+      <div class="block">
+        <div class="book" id="">
+          <span>一本書</span>
+        </div>
+        <span class="name">一本書</span>
+        <span class="author">251131395</span>
+      </div>
+      <div class="block">
+        <div class="book" id="">
+          <span>一本書</span>
+        </div>
+        <span class="name">一本書</span>
+        <span class="author">251131395</span>
+      </div>
+      <div class="block">
+        <div class="book" id="">
+          <span>一本書</span>
+        </div>
+        <span class="name">一本書</span>
+        <span class="author">251131395</span>
+      </div>
+    </div>
+    <div style="margin:0px 0px 25px">
+      <span style="font-weight:bold;margin:0px 25px 0px">查看更多
+        <span style="color:gray;"> 》</span></span>
+
+    </div>
+  </div>
+
+  <div class="timeline">
+
+    <!--⼤災難-->
+    <div class="tl-title">
+      <span>⼤災難</span>
+      <button>了解更多</button>
+    </div>
+    <details open>
+      <summary>2024年</summary>
+      由於過度開發和全球暖化，極端天氣事件開始頻繁發⽣，如颶⾵、洪⽔等，導致⼤量⽣命和財產損失。
+    </details>
+    <details open>
+      <summary>2029年</summary>
+      極端天氣現象持續增多和加劇,多數政府開始著⼿逃⽣計畫。
+    </details>
+    <div style="height:100px"></div>
+
+    <!--遷移計劃-->
+    <div class="tl-title">
+      <span>遷移計劃</span>
+      <button>了解更多</button>
+    </div>
+    <details open>
+      <summary>2045年</summary>
+      第⼀批移⺠⾶船啟動,由政府贊助,載運專家、科學家和基礎設施⼈才前往⽕星尋找殖⺠點。
+    </details>
+    <details open>
+      <summary>2045年</summary>
+      到達⽕星
+    </details>
+    <details open>
+      <summary>2046年</summary>
+      地球天氣災害繼續惡化。⼀部分有狀態的⼈⼠⾃發搭乘私⼈空間⾶船加⼊⽕星殖⺠。
+    </details>
+    <details open>
+      <summary>2046年</summary>
+      建⽴⽕星殖⺠地
+    </details>
+    <details>
+      <summary style="color:gray">更多</summary>
+      <details open>
+        <summary>2046年</summary>
+        第⼀批⽕星移⺠在⾚道區建⽴殖⺠地基地時,⾯臨滲透性⼟壤和嚴峻氣候的挑戰,不得不尋找居住和農作物⽣⻑的新⽅法。
+      </details>
+      <details open>
+        <summary>2052年</summary>
+        殖⺠地⼈⼝增加,但⽣存資源緊缺。⼀場⼤⾵暴毀壞基建,殖⺠者陷⼊⻝物和氧氣短缺危機,只憑意志⽣存⽉餘。
+      </details>
+      <details open>
+        <summary>2055年</summary>
+        兩派殖⺠者因分配資源觀點不同引發進階衝突,近乎在原始社會發展出的「部落戰爭」。後由⾸席科學家調解講和。
+      </details>
+      <details open>
+        <summary>2058年</summary>
+        ⽕星上發現豐富的⽔冰資源,為殖⺠地⽣存提供了保障。但在開採過程中也發⽣過意外事故。
+      </details>
+      <details open>
+        <summary>2065年</summary>
+        殖⺠地已初具規模,但仍缺乏地球上豐富的⽣物資源。有科學家提出在⽕星培育地球⽣物以建⽴穩定的⽣態系統。
+      </details>
+      <details open>
+        <summary>2069年</summary>
+        ⾸批⽕星⼟⽣智慧⽣命誕⽣,但是否能適應⽕星⽣存環境則恐難下定論。殖⺠者陷⼊新⼀輪⽣存考驗。
+      </details>
+      <details open>
+        <summary>2070年</summary>
+        第⼀批⽕星移⺠後代出⽣,⼈類為保護⾃⾝利益,隱瞞了地球⽂明毀滅的真相及遷移計劃。
+      </details>
+    </details>
+    <div style="height:100px"></div>
+
+    <!--地球⼈類-->
+    <div class="tl-title">
+      <span>地球⼈類</span>
+      <button>了解更多</button>
+    </div>
+    <details open>
+      <summary>2047年</summary>
+      地球氣候崩潰,海平⾯上升導致⼤⽚低洼地區淹沒。⼤批難⺠聚集但移⺠能⼒已無法負荷。
+      地球上⼤部份⽣態系統崩潰,超過90%的⼈類因災害喪⽣。倖存者混亂邊緣。
+    </details>
+    <details open>
+      <summary>2056年</summary>
+      地球上形成數個持續隔絕的⼩型⼈類社區,恢復原始狩獵採集⽅式⽣存。
+    </details>
+    <details open>
+      <summary>2058年</summary>
+      部分社區出現宗教。
+    </details>
+    <div style="height:100px"></div>
+
+    <!--進化-->
+    <div class="tl-title">
+      <span>進化</span>
+      <button>了解更多</button>
+    </div>
+    <div class="character">
+      <div id="蟑螂人">
+        <h3>蟑螂人</h3>
+      </div>
+
+      <div id="蟑螂人"></div>
+      <div id="蟑螂人"></div>
+      <div id="蟑螂人"></div>
+      <div id="蟑螂人"></div>
+      <div id="蟑螂人"></div>
+    </div>
+    <details open>
+      <summary>2090年</summary>
+      ⾃然災害導致全球氣候與⽣態系統重⼤變異。各地區動物相繼發⽣進化。
+    </details>
+    <details open>
+      <summary>2095年</summary>
+      部分動物的智⼒和社交能⼒⼤幅增強,開始建⽴完整的社會結構,並掌控⼈類⽂明的科技。
+    </details>
+    <details open>
+      <summary>2100年</summary>
+      ⾮⼈類智慧型⽣物社會結構形成,使⽤基於⼈類遺留科技。
+    </details>
+    <details open>
+      <summary>2150年</summary>
+      動物⽂明蓬勃發展,⼈類在其社會中淪為低階存在,成為⻝物或是寵物。
+    </details>
+    <div style="height:100px"></div>
+
+    <iframe src="https://www.desmos.com/calculator/cgjvenoxo6?embed" width="100%" style="border: 1px solid #ccc" frameborder=0></iframe>
+  </div>
+
+  <div class="messagebox">
+    <h3>留言信箱</h3>
+    <form id="contactForm">
+      <label for="name">姓名:</label>
+      <input type="text" id="name" name="name" required>
+      <br>
+      <label for="identity">目的:</label>
+      <select id="identity" name="identity" required>
+        <option value="提供更改建議">提供更改建議</option>
+        <option value="評價">評價</option>
+        <option value="鳩噏">鳩噏</option>
+        <option value="其他">其他</option>
+      </select>
+      <br>
+      <label for="message">留言內容:</label>
+      <br>
+      <textarea id="message" name="message" required></textarea>
+      <br><br>
+      <div class="submit-align">
+        <input type="submit" value="提交" class="submit">
+      </div>
+
+    </form>
+    <div style="height:100px"></div>
+  </div>
+
+  <script>
+    document
+  .getElementById("contactForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    var name = document.getElementById("name").value;
+    var identity = document.getElementById("identity").value;
+    var message = document.getElementById("message").value;
+
+    var nameRegex = /^[\p{L}]+$/u;
+
+    if (!nameRegex.test(name)) {
+      alert("姓名只能包含文字，不能包含數字或其他符號。");
+      return;
+    }
+
+    var subject = "[" + name + "]於你的網站傳送了留言";
+    var body = "姓名: " + name + "\n";
+    body += "身份: " + identity + "\n";
+    body += "留言內容: " + message;
+
+    var mailLink = document.createElement("a");
+    mailLink.href =
+      "mailto:251131395y@gmail.com?subject=" +
+      encodeURIComponent(subject) +
+      "&body=" +
+      encodeURIComponent(body);
+    mailLink.click();
+  });
+
+  </script>
+
+</body>
+
+</html>
