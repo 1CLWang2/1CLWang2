@@ -106,6 +106,25 @@ if (!localStorage.getItem("visitedBefore")) {
   // 設置已訪問標誌，以便下次訪問時不再顯示提醒
   localStorage.setItem("visitedBefore", "true");
 }
+
+    // 詢問用戶密碼的函數
+function askPassword() {
+  // 使用prompt函數彈出密碼輸入框
+  var password = prompt("請輸入密碼以繼續瀏覽網站:");
+
+  // 檢查密碼是否符合要求
+  if (password === "a1234567") {
+    // 密碼正確，用戶可以繼續瀏覽網站
+    alert("密碼正確！請繼續瀏覽網站。");
+  } else {
+    // 密碼錯誤，重新詢問密碼
+    alert("密碼錯誤！請重新輸入。");
+    askPassword();
+  }
+}
+
+// 在網頁載入完成後調用詢問密碼函數
+window.onload = askPassword;
   </script>
 </body>
 
