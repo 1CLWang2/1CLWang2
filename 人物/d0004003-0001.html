@@ -75,16 +75,7 @@ pre {
   </div>
 
   <script>
-    // 檢查用戶是否是首次訪問網站
-if (!localStorage.getItem("visitedBefore")) {
-  // 顯示警告框或彈出窗口等提醒用戶的方式
-  alert("警告：本網站內容可能包含成人、暴力或令人不適的內容。請確保您是合法年齡並適合觀看此類內容，否則請立即離開。");
-
-  // 設置已訪問標誌，以便下次訪問時不再顯示提醒
-  localStorage.setItem("visitedBefore", "true");
-}
-    
-    // 詢問用戶密碼的函數
+  // 詢問用戶密碼的函數
 function askPassword() {
   // 使用confirm函數彈出確認框
   var result = confirm("請輸入密碼以繼續瀏覽網站:");
@@ -103,8 +94,8 @@ function askPassword() {
       askPassword();
     }
   } else {
-    // 用戶點擊取消按鈕，導航到上一頁或其他處理方式
-    history.back(); // 返回上一頁
+    // 用戶點擊取消按鈕，重定向到另一個頁面或執行其他處理方式
+    window.location.href = "https://z0oss.github.io/"; // 替換為您要重定向的頁面
     // 或者使用其他處理方式
   }
 }
