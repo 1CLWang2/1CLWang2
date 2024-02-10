@@ -1,1 +1,107 @@
-n
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Z00">
+  <style>
+@import url（https: //fonts.googleapis.com/earlyaccess/notosanstc.css）;
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  background-color: #f0f0f0;
+  margin: 0px;
+  padding: 0px;
+}
+
+.top {
+  text-align: center;
+  padding: 20px 20px 0px;
+}
+
+.title {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.author {
+  display: block;
+  font-size: 16px;
+  color: gray;
+}
+
+.article{
+  padding: 0px 20px 0px;
+}
+
+pre {
+  white-space: pre-wrap;
+  font-size:18px;
+
+}
+
+.bottom{
+  text-align: center;
+}
+
+#left,#right{
+  margin:0px 20px 50px;
+  border: none;
+  color: white;
+  background-color: black;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 7px 12px 7px;
+}
+  </style>
+</head>
+
+<body>
+  <div class="top">
+    <span class="title">畸形</span>
+    <span class="author">Avida</span>
+    <hr>
+  </div>
+
+  <div class="article">
+    <pre>
+    </pre>
+  </div>
+
+  <div class="bottom">
+    <button id="left">上一頁</button>
+    <button id="right">下一頁</button>
+  </div>
+
+  <script>
+    // 檢查用戶是否是首次訪問網站
+if (!localStorage.getItem("visitedBefore")) {
+  // 顯示警告框或彈出窗口等提醒用戶的方式
+  alert("警告：本網站內容可能包含成人、暴力或令人不適的內容。請確保您是合法年齡並適合觀看此類內容，否則請立即離開。");
+
+  // 設置已訪問標誌，以便下次訪問時不再顯示提醒
+  localStorage.setItem("visitedBefore", "true");
+}
+    // 詢問用戶密碼的函數
+function askPassword() {
+  // 使用prompt函數彈出密碼輸入框
+  var password = prompt("請輸入密碼以繼續瀏覽網站:");
+
+  // 檢查密碼是否符合要求
+  if (password === "d0004003-0001") {
+    // 密碼正確，用戶可以繼續瀏覽網站
+    alert("密碼正確！請繼續瀏覽網站。");
+  } else {
+    // 密碼錯誤，重新詢問密碼
+    alert("密碼錯誤！請重新輸入。");
+    askPassword();
+  }
+}
+
+// 在網頁載入完成後調用詢問密碼函數
+window.onload = askPassword;
+  </script>
+</body>
+
+</html>
