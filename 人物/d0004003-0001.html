@@ -77,7 +77,7 @@ pre {
   <script>
   // 詢問用戶密碼的函數
 function askPassword() {
-  // 使用prompt函數彈出密碼輸入框
+  // 使用 prompt 函數彈出密碼輸入框
   var password = prompt("請輸入密碼以繼續瀏覽網站:");
 
   // 檢查密碼是否符合要求
@@ -87,7 +87,7 @@ function askPassword() {
   } else {
     // 密碼錯誤，重新詢問密碼
     alert("密碼錯誤！請重新輸入。");
-    askPassword();
+    history.back(); // 返回上一頁
   }
 }
 
