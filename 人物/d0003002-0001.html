@@ -98,6 +98,14 @@ pre {
   </div>
 
   <script>
+    // 檢查用戶是否是首次訪問網站
+if (!localStorage.getItem("visitedBefore")) {
+  // 顯示警告框或彈出窗口等提醒用戶的方式
+  alert("警告：本網站內容可能包含成人、暴力或令人不適的內容。請確保您是合法年齡並適合觀看此類內容，否則請立即離開。");
+
+  // 設置已訪問標誌，以便下次訪問時不再顯示提醒
+  localStorage.setItem("visitedBefore", "true");
+}
   </script>
 </body>
 
