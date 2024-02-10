@@ -75,38 +75,23 @@ pre {
   </div>
 
   <script>
-  // 隐藏网站内容的函数
-function hideContent() {
-  // 使用 CSS 将网站内容隐藏
-  document.body.style.display = 'none';
-}
-
-// 詢問用戶密碼的函數
+  // 詢問用戶密碼的函數
 function askPassword() {
-  // 使用 confirm 函數彈出確認框
-  var result = confirm("請輸入密碼以繼續瀏覽網站:");
+  // 使用prompt函數彈出密碼輸入框
+  var password = prompt("請輸入密碼以繼續瀏覽網站:");
 
-  if (result) {
-    // 使用 prompt 函數彈出密碼輸入框
-    var password = prompt("請輸入密碼:");
-
-    // 檢查密碼是否符合要求
-    if (password === "d0004003-0001") {
-      // 密碼正確，顯示網站內容
-      document.body.style.display = 'block';
-      alert("密碼正確！請繼續瀏覽網站。");
-    } else {
-      // 密碼錯誤，重新詢問密碼
-      alert("密碼錯誤！請重新輸入。");
-      askPassword();
-    }
+  // 檢查密碼是否符合要求
+  if (password === "d0004003-0001") {
+    // 密碼正確，用戶可以繼續瀏覽網站
+    alert("密碼正確！請繼續瀏覽網站。");
   } else {
-    // 用戶點擊取消按鈕，隱藏網站內容
-    hideContent();
+    // 密碼錯誤，重新詢問密碼
+    alert("密碼錯誤！請重新輸入。");
+    askPassword();
   }
 }
 
-// 在網頁載入完成後調用函數
+// 在網頁載入完成後調用詢問密碼函數
 window.onload = askPassword;
   </script>
 </body>
