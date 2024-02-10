@@ -75,24 +75,25 @@ pre {
   </div>
 
   <script>
-    // 詢問用戶密碼的函數
-function askPassword() {
-  // 使用prompt函數彈出密碼輸入框
-  var password = prompt("請輸入密碼以繼續瀏覽網站:");
+    var sWord = prompt("輸入正確密碼才能登陸!"," ")
 
-  // 檢查密碼是否符合要求
-  if (password === "d0004003") {
-    // 密碼正確，用戶可以繼續瀏覽網站
-    alert("密碼正確！請繼續瀏覽網站。");
-  } else {
-    // 密碼錯誤，重新詢問密碼
-    alert("密碼錯誤！請重新輸入。");
-    askPassword();
-  }
+var password = "d0004003-0001";
+
+var isCancle = false;
+while(sWord!=password){
+  if (sWord==null){
+    isCancle = true;
+    break;
+}else{
+    sWord = prompt("輸入正確密碼才能登陸!"," ");
 }
-
-// 在網頁載入完成後調用詢問密碼函數
-window.onload = askPassword;
+}
+if(!isCancle){
+  alert("密碼正確");
+}else{
+   location.replace("about:blank");
+   window.close();
+}
   </script>
 </body>
 
