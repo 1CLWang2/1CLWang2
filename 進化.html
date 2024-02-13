@@ -5,24 +5,29 @@
   <meta name="keywords" content="Z0O">
   <title>進化</title>
   <style>
-    @import url（https: //fonts.googleapis.com/earlyaccess/notosanstc.css）;
-  body {
+    jjj{@import url（https: //fonts.googleapis.com/earlyaccess/notosanstc.css）;
+
+body {
   font-family: "Noto Sans TC", sans-serif;
   background-color: white;
   margin: 0px;
   padding: 0px;
 }
 
-sup{
-color:red;
-font-size:14px;
-margin:0px 2px 0px;
+hr {
+  border: 0.8px solid gray;
+  margin: 20px;
+}
+
+sup {
+  color: red;
+  font-size: 14px;
 }
 
 @media screen and (max-width: 768px) {
-sup{
-font-size:6px;
-}
+  sup {
+    font-size: 6px;
+  }
 }
 
 .top {
@@ -30,7 +35,7 @@ font-size:6px;
 }
 
 .character {
-  margin: 10px;
+  margin: 0px 10px 10px;
   color: black;
   border: 1px none solid;
   text-align: left;
@@ -39,19 +44,19 @@ font-size:6px;
 
 .chapter span {
   display: block;
-  font-size:18px;
-  padding:7px 0px 7px;
+  font-size: 18px;
+  padding: 7px 0px 7px;
   border-bottom: 1px dashed black;
 }
 
-.chapter span:hover{
-background-color:rgba(0,0,0,0.1);
+.chapter span:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
-.chapter font{
-color:gray;
-font-size:12px;
-margin:0px 2px 0px;
+.chapter font {
+  color: gray;
+  font-size: 12px;
+  margin: 0px 2px 0px;
 }
 
 .chapter {
@@ -63,14 +68,49 @@ margin:0px 2px 0px;
   font-weight: bold;
   font-size: 18px;
 }
+
+.title {
+  padding: 0px 15px 0px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.area {
+  white-space: nowrap;
+  scroll-snap-type: x;
+  overflow: auto;
+  margin: 0px 15px 0px;
+  color: black;
+  border: none;
+  text-align: left;
+}
+
+.block {
+  padding: 20px 0px 0px;
+  width: 100%;
+  border: none;
+  vertical-align: top;
+  white-space: normal;
+  display: inline-block;
+  text-align: left;
+  scroll-snap-align: start;
+}
+
+pre {
+  white-space: pre-wrap;
+  font-size: 14px;
+}
+}
   </style>
 </head>
 
 <body>
   <header>
   </header>
+
+  <!--人物-->
   <br>
-  <span style="padding:20px;font-size:24px;font-weight:bold;">人物</span>
+  <span style="margin:20px;font-size:24px;font-weight:bold;">人物</span>
   <div class="top">
     <div class="character" id="白墨誅">
       <details open>
@@ -113,18 +153,19 @@ margin:0px 2px 0px;
           <span class="name">Avida</span>
         </summary>
         <div class="chapter">
-          <span style="color:gray;" onclick="location.href='https://z0oss.github.io/人物/d0004003-0001.html'">1:畸形<font>自傳</font></span>
+          <span style="color:gray;">1:畸形<font>自傳</font></span>
           <span style="color:gray;">2:飼養<font>小說</font></span>
           <span style="color:gray;">3:嘗試<font>小說</font></span>
         </div>
       </details>
     </div>
     <div class="character" id="申至仁">
-      <details>
+      <details open>
         <summary>
-          <span class="name">申至仁</span>
+          <span class="name">申至仁<sup> ●</sup></span>
         </summary>
         <div class="chapter">
+          <span>0:名字含意<font style="color:tomato">！選讀 含微戲透！</font></span>
           <span style="color:gray;">1:人？<font>自傳</font></span>
           <span style="color:gray;">2:碰撞<font>小說</font></span>
           <span style="color:gray;">3:手指<font>小說</font></span>
@@ -132,6 +173,92 @@ margin:0px 2px 0px;
       </details>
     </div>
   </div>
+  <hr>
+
+  <!--詞條-->
+  <span style="margin:20px;font-size:24px;font-weight:bold;">詞條</span>
+  <div class="area">
+    <div class="block">
+      <span class="title"><u>場景</u></span>
+      <div class="character">
+        <details>
+          <summary>
+            <span class="name">从人餐廳</span>
+          </summary>
+          <pre>123</pre>
+        </details>
+      </div>
+      <div class="character">
+        <details>
+          <summary>
+            <span class="name">白常山紀念中學</span>
+          </summary>
+          <pre>123</pre>
+        </details>
+      </div>
+    </div>
+    <div class="block">
+      <span class="title"><u>事或物</u></span>
+      <div class="character">
+        <details>
+          <summary>
+            <span class="name">菜人</span>
+          </summary>
+          <pre>123</pre>
+        </details>
+      </div>
+      <div class="character">
+        <details>
+          <summary>
+            <span class="name">物人</span>
+          </summary>
+          <pre>123</pre>
+        </details>
+      </div>
+    </div>
+    <div class="block">
+      <span class="title"><u>組織及勢力</u></span>
+      <div class="character">
+        <details>
+          <summary>
+            <span class="name"></span>
+          </summary>
+          <pre>123</pre>
+        </details>
+      </div>
+      <div class="character">
+        <details>
+          <summary>
+            <span class="name"></span>
+          </summary>
+          <pre>123</pre>
+        </details>
+      </div>
+    </div>
+    <div class="block">
+      <span class="title"><u>其他</u></span>
+      <div class="character">
+        <details>
+          <summary>
+            <span class="name"></span>
+          </summary>
+          <pre>123</pre>
+        </details>
+      </div>
+      <div class="character">
+        <details>
+          <summary>
+            <span class="name"></span>
+          </summary>
+          <pre>123</pre>
+        </details>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:right;color:gray;padding:0px 20px 0px;font-size:14px;"><span>*左右滑動以查看更多</span></div>
+  <hr>
+
+  <div style="height:500px"></div>
 
   <script>
   </script>
