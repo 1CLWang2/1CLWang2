@@ -1,0 +1,104 @@
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Z00">
+  <style>
+ body {
+      font-family: "Noto Sans TC", sans-serif;
+      background-color: #f0f0f0;
+    }
+
+.container {
+  position: relative;
+  border: 1px solid gray;
+  padding: 32px 15px 17px;
+  border-radius: 2px;
+  background-color:white;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-left: 30px solid gray;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.triangle2 {
+  width: 0;
+  height: 0;
+  border-left: 33px solid transparent;
+  border-top: 33px solid #f0f0f0;
+  position: absolute;
+  top: -2px;
+  right: -2px;
+}
+
+.container hr {
+  border: 0.8px lightgray solid;
+  margin: 3px 0px 1px;
+}
+
+.container .label {
+  font-size: 14px;
+  color: gray;
+}
+  </style>
+</head>
+
+<body>
+  
+<div class="container">
+  <div class="triangle"></div>
+  <div class="triangle2"></div>
+  <span>你知道嗎？這個世代的父母常以諧音給子女取名，例如：張琅仁、白墨誅等。</span>
+  <hr>
+  <span class="label">進化</span>
+</div>
+
+<div class="container">
+  <div class="triangle"></div>
+  <div class="triangle2"></div>
+  <span>《靈與肉》是由 張琅仁 及 YY 一同繪畫的。</span>
+  <hr>
+  <span class="label">進化</span>
+</div>
+
+<div class="container">
+  <div class="triangle"></div>
+  <div class="triangle2"></div>
+  <span>白常山女土是一個熱心的慈善家。</span>
+  <hr>
+  <span class="label">進化</span>
+</div>
+
+<div class="container">
+  <div class="triangle"></div>
+  <div class="triangle2"></div>
+  <span>許多人都愛去从人餐廳，因為便宜且份量大，只是服務態度有些差而且。</span>
+  <hr>
+  <span class="label">進化</span>
+</div>
+
+  <script>
+  function showContainerRandomly() {
+    var containers = document.getElementsByClassName('container');
+    var randomIndex = Math.floor(Math.random() * containers.length);
+
+    for (var i = 0; i < containers.length; i++) {
+      if (i === randomIndex) {
+        containers[i].style.display = 'block';
+      } else {
+        containers[i].style.display = 'none';
+      }
+    }
+  }
+
+  setInterval(showContainerRandomly, 3000);
+  </script>
+</body>
+
+</html>
